@@ -1,8 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2018/4/4 18:15
-# @Author  : Zhangslob
-# @File    : main.py
 
-from scrapy.cmdline import execute
-execute('scrapy crawl cnki'.split())
+import threading
+
+def shadow(num):
+    print('{}产生了第{}个分身...'.format(threading.currentThread().getName(), num))
+
+for i in range(1, 6):
+    t = threading.Thread(target=shadow, args=(i,))
+    t.start()
+    t.join(timeout=10)
+
+print(threading.currentThread().getName())
