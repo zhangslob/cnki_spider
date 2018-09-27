@@ -163,7 +163,6 @@ class Request(object):
 
         return response
 
-
     async def fetch_callback(self, sem) -> Tuple[AsyncGeneratorType, Response]:
         async with sem:
             res = await self.fetch()

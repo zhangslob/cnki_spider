@@ -3,6 +3,7 @@
 
 from lxml import etree
 
+
 class Response(object):
     """
     Return a friendly response

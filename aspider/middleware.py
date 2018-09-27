@@ -4,6 +4,7 @@
 from collections import deque
 from functools import wraps
 
+
 class Middleware:
 
     def __init__(self):
